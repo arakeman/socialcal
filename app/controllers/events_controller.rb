@@ -10,6 +10,7 @@ class EventsController < ApplicationController
   def tag
     if params.has_key?(:name)
       @events = Event.where(tag: params[:name])
+      @tagTitle = params[:name]
     end
   end
 

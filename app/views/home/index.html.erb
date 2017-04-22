@@ -1,12 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Events</h1>
+<h1>All Events</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= link_to 'University', tag_path('university') %></th>
+      <th><%= link_to 'Local', tag_path('local') %></th>
+      <th><%= link_to 'Music', tag_path('music') %></th>
+      <th><%= link_to 'Educational', tag_path('educational') %></th>
+      <th><%= link_to 'Culture', tag_path('Culture') %></th>
+      <th><%= link_to 'Food', tag_path('food') %></th>
+      <th><%= link_to 'Family', tag_path('family') %></th>
+    </tr>
+  </thead>
+</table>
 
 <table>
   <thead>
     <tr>
       <th>Title</th>
-      <th>Imageurl</th>
       <th>Description</th>
       <th>Date</th>
       <th>Tag</th>
@@ -19,8 +32,8 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
+        <%= image_tag(event.imageURL) %>
         <td><%= event.title %></td>
-        <td><%= event.imageURL %></td>
         <td><%= event.description %></td>
         <td><%= event.date %></td>
         <td><%= event.tag %></td>
