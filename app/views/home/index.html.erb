@@ -1,24 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>All Events</h1>
+<h3>All Events</h3>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th><%= link_to 'University', tag_path('university') %></th>
-      <th><%= link_to 'Local', tag_path('local') %></th>
-      <th><%= link_to 'Music', tag_path('music') %></th>
-      <th><%= link_to 'Educational', tag_path('educational') %></th>
-      <th><%= link_to 'Culture', tag_path('Culture') %></th>
-      <th><%= link_to 'Food', tag_path('food') %></th>
-      <th><%= link_to 'Family', tag_path('family') %></th>
-    </tr>
-  </thead>
-</table>
-
-<table>
-  <thead>
-    <tr>
+      <th></th>
       <th>Title</th>
       <th>Description</th>
       <th>Date</th>
@@ -32,16 +19,16 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
-        <%= image_tag(event.imageURL) %>
+        <td><%= image_tag(event.imageURL) %></td>
         <td><%= event.title %></td>
-        <td><%= event.description %></td>
+        <td><div><%= event.description %></div></td>
         <td><%= event.date %></td>
         <td><%= event.tag %></td>
         <td><%= event.latitude %></td>
         <td><%= event.longitude %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', event, class: 'btn-link' %></td>
+        <td><%= link_to 'Edit', edit_event_path(event), class: 'btn-link' %></td>
+        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-link' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -49,4 +36,4 @@
 
 <br>
 
-<%= link_to 'New Event', new_event_path %>
+<%= link_to 'New Event', new_event_path, class: 'btn' %>

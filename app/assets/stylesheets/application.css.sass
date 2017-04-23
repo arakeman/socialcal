@@ -1,0 +1,55 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require bootstrap-datepicker
+ *= require_self
+ *= require_tree .
+ */
+
+@import "bootstrap-sprockets"
+@import "bootstrap"
+
+.navbar-nav
+	padding-left: 10px
+	padding-top: 15px
+
+	.nav-item
+		padding-right: 10px
+
+.field
+	padding-top: 20px
+	padding-bottom: 15px
+
+.btn
+	background-color: lightgrey
+	color: white
+
+	&:hover
+		background-color: cornflowerblue
+		color: white
+
+.row
+	padding-bottom: 10px
+
+td
+	div
+		max-height: 150px
+		overflow: hidden
+		text-overflow: ellipsis
+
+img
+	max-height: 150px
+
+textarea
+	min-width: 100%
+	max-width: 100%
+	min-height: 150px

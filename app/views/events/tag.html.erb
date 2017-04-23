@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Events tagged with '<%= @tagTitle %>'</h1>
+<h3><%= @tagTitle %> Events</h3>
 
-<table>
+<table class="table">
   <thead>
     <tr>
+      <th></th>
       <th>Title</th>
-      <th>Imageurl</th>
       <th>Description</th>
       <th>Date</th>
       <th>Tag</th>
@@ -19,16 +19,16 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
+        <td><%= image_tag(event.imageURL) %></td>
         <td><%= event.title %></td>
-        <td><%= event.imageURL %></td>
-        <td><%= event.description %></td>
+        <td><div><%= event.description %></div></td>
         <td><%= event.date %></td>
         <td><%= event.tag %></td>
         <td><%= event.latitude %></td>
         <td><%= event.longitude %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', event, class: 'btn-link' %></td>
+        <td><%= link_to 'Edit', edit_event_path(event), class: 'btn-link' %></td>
+        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-link' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -36,4 +36,4 @@
 
 <br>
 
-<%= link_to 'Back', root_path %>
+<%= link_to 'Back', root_path, class: 'btn-link' %>
