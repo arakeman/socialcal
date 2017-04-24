@@ -1,5 +1,10 @@
 <nav class="navbar navbar-default">
-	<a class="navbar-brand" href="/">SocialCal</a>
+	<a class="navbar-nav" style="padding-top: 10px;" href="/">
+		<%= image_tag "icon.png", class: "d-inline-block align-top icon" %>
+	</a>
+	<a class="navbar-brand" href="/">
+		SocialCal
+	</a>
 	<div class="navbar-nav">
 		<%= link_to 'University', tag_path('University'), class: 'nav-item nav-link btn-link' %>
 		<%= link_to 'Local', tag_path('Local'), class: 'nav-item nav-link btn-link' %>
